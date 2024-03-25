@@ -17,8 +17,7 @@ if (.Platform$OS.type == "windows") {
 
 
 # Example function call
-CDL_data_list <- CDLdata::download_state_data_parallel(State = "SC", year = 2022)
-
+CDL_data_list <- CDLdata::download_state_data_parallel(State = c("SC"), year = 2022)
 
 CDL_data <- purrr::map_df(CDL_data_list, tibble::as_tibble)
 CDL_data$To <- NULL # Remove extra column

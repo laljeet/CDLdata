@@ -24,6 +24,7 @@ in parallel and stored in a list, with each list element named after the county'
 \examples{
 \dontrun{
   alabama_data_2017 <- download_state_data_parallel(State = "AL", year = 2017)
+  multiple_states_data_2017 <- download_state_data_parallel(State = c("SC","NC"), year = 2022)
 }
 
 }

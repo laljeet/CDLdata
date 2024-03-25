@@ -16,6 +16,7 @@
 #' @examples
 #' \dontrun{
 #'   alabama_data_2017 <- download_state_data_parallel(State = "AL", year = 2017)
+#'   multiple_states_data_2017 <- download_state_data_parallel(State = c("SC","NC"), year = 2022)
 #' }
 #'
 #' @importFrom dplyr filter
@@ -25,7 +26,7 @@
 download_state_data_parallel <- function(State, year) {
   load("./data/fips_csv.rda")
   # Filter data for the specified State
-  fips_data_filtered <- dplyr::filter(fips_csv, state == State)
+  fips_data_filtered <- dplyr::filter(fips_csv, state %in% State)
 
   data_list <- future.apply::future_lapply(seq_len(nrow(fips_data_filtered)), function(i) {
     # Download the data
