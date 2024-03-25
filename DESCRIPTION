@@ -1,11 +1,10 @@
 Package: CDLdata
 Type: Package
-Title: What the Package Does (Title Case)
+Title: Downloads CDL data from National Agricultural Statistics Service in parallel processing.
 Version: 0.1.0
-Author: Who wrote it
+Author: Laljeet Sangha
 Maintainer: The package maintainer <yourself@somewhere.net>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
+Description: It uses GetCDLComp function from CropScapeR to download the CDL data. This also uses parall processing pacakges future and future.apply to download larger data.
 License: What license is it under?
 Encoding: UTF-8
 LazyData: true

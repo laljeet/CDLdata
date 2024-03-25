@@ -1,5 +1,7 @@
 Lookup_table <- read.csv("./data-raw/Lookup_table.csv")
-usethis::use_data(Lookup_table)
+Lookup_table <- dplyr::bind_rows(Lookup_table, data.frame(LC_code = 62, LC_type = "Grass/Pasture"))
+
+usethis::use_data(Lookup_table, overwrite = TRUE)
 
 
 
